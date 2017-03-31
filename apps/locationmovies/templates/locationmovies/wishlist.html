@@ -1,0 +1,45 @@
+{% extends './base_body.html' %}
+
+{% block main_content %}
+
+    <div class="container span18">
+        <div class='cleaner_h40'></div>
+
+        <div class='row'>
+                <div class='cleaner_h10'></div>
+                <div class='cleaner_h20'></div>
+
+            <div class='span14'>
+                <table class='zebra-striped ads'>
+                    <thead>
+                    <tr>
+                        <th class='span2'></th>
+                        <th class='span4'>Title</th>
+                        <th class='span2'>Year</th>
+                        <th class='span2'>Location</th>
+                        <th class='span4'>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for movie in favorites %}
+                        <tr>
+                            <td class='mini-thumbnail'><img src='static/locationmovies/images/sample/milk copy.png'/>
+                            </td>
+                            <td>{{ movie.title }}</td>
+                            <td>{{ movie.release_year }}</td>
+                            <td>{{ movie.location }}</td>
+                            <td>
+                                <form action="/wishlist" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="{{ movie.id }}" name="deleteMe">
+                                    <input type="submit" value="Delete" class='btn btn-danger'>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div><!-- end of center content -->
+        </div>
+    </div>
+{% endblock %}

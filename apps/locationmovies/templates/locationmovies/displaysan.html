@@ -1,0 +1,107 @@
+{% extends './base_body.html' %}
+{% load staticfiles%}
+
+{% block main_content %}
+<div class="container span18">
+    <div class="row">
+        <div class='span14'>
+            <!-- Title & Description -->
+            <h1>San Andreas</h1>
+            <div class='cleaner_h20'></div>
+            <!-- inside content -->
+            <div class='span14'>
+                <div class='row'>
+                    <div class='span6'>
+                        <div id='main-thumbnail'>
+                            <img src="{% static 'locationmovies/images/sample/sanandreas.jpg' %}"/>
+                            <p>Expand</p>
+                        </div>
+                    </div>
+                    <!-- right side content - price and basic information -->
+                    <div class='span8'>
+                        <div class='row'>
+                            <div class='span2'>
+                                Film Location:
+                            </div>
+                            <div class='span6'>
+                                Coit Tower
+                            </div>
+                        </div>
+                        <div class='cleaner_h10'></div>
+                        <div class='row'>
+                            <div class='span2'>
+                                Year:
+                            </div>
+                            <div class='span6'>
+                                <span class='time-left'>2015</span>
+                            </div>
+                        </div>
+                        <div class='cleaner_h10'></div>
+                        <div class='row'>
+                            <div class='span2'>
+                                Director:
+                            </div>
+                            <div class='span6'>
+                                Brad Peyton
+                            </div>
+                        </div>
+                        <div class='cleaner_h10'></div>
+                        <div class='row'>
+                            <div class='span2'>
+                                Actor:
+                            </div>
+                            <div class='span6'>
+                                Dwayne Johnson
+                            </div>
+                        </div>
+                        <div class='cleaner_h10'></div>
+                        <div class='row'>
+                            <div class='span2'>
+                                <!-- Description: -->
+                            </div>
+                            <div class='span6'>
+                                <!-- {{ description }} -->
+                            </div>
+                        </div>
+                        <div class='btn small success'>Add to Wish-List</div>
+                    </div><!-- end of right side content - price and basic description -->
+                </div>
+            </div>
+        </div>
+        <div class='span4'>
+            <div class='span4'>
+                <iframe width="220" height="280" frameborder="1" scrolling="yes" marginheight="0" marginwidth="0"
+                        src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q='+coit+tower+'&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=56.06887,64.6875&amp;vpsrc=0&amp;ie=UTF8&amp;hq=&amp;hnear=Seattle,+King,+Washington&amp;t=m&amp;z=10&amp;iwloc=near&amp;output=embed"></iframe>
+                <br/>
+                <small><a
+                        href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=seattle+downtown&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=56.06887,64.6875&amp;vpsrc=0&amp;ie=UTF8&amp;hq=&amp;hnear=Seattle,+King,+Washington&amp;t=m&amp;z=10&amp;iwloc=A"
+                        style="color:#0000FF;text-align:left">View Larger Map</a></small>
+            </div>
+        </div><!-- end of row -->
+        <div class='separator cleaner_h20'></div>
+        <div class='cleaner_h20'></div>
+        <!-- main description -->
+        <div class='row'>
+            <div class='span14'>
+                <h4>Comments from <a href="#">Steven</a></h4>
+                <p>
+                    I've lived in San Francisco a long time and I have been to coit tower, but after watching this
+                    movie, that tower is a constant reminder of what could happen in a massive earthquake in this city.
+                </p>
+                <div class='separator cleaner_h5'></div>
+            </div>
+        </div>
+        <!-- <div class='well span6'> -->
+        <div class='row'>
+            <form class='form-stacked'>
+                <div class="clearfix">
+                    <label for="message">Add comments</label>
+                    <textarea class="xlarge" id="message" name="message" rows='1' style='resize:none;'></textarea>
+                    <input type='submit' value='submit&raquo;' id='submit' name='submit' class="btn primary"/>
+                </div>
+            </form>
+        </div>
+        <!-- end of main description -->
+    </div> <!-- /container -->
+</div>
+{% endblock %}

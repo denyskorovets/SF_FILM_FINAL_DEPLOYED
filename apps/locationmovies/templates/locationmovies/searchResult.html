@@ -1,0 +1,52 @@
+{% extends './base_body.html' %}
+
+{% block main_content %}
+    <div class="container span18">
+        <div class='cleaner_h40'></div>
+
+        <div class='row'>
+            <div class="well span4 sidebar">
+                <h4>Guest</h4>
+                <div class='cleaner_h10'></div>
+                <form method="get" action="/wishlist">
+                    <input type="submit" value="See my wishlist" class='btn primary large'>
+                </form>
+                <div class='cleaner_h20'></div>
+            </div><!-- end of sidebar -->
+
+            <div class='span14'>
+                <h2>Add to list</h2>
+                <table class='zebra-striped ads'>
+                    <thead>
+                    <tr>
+                        <th class='span2'></th>
+                        <th class='span4'>Title</th>
+                        <th class='span2'>Year</th>
+                        <th class='span2'>Location</th>
+                        <th class='span4'>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class='mini-thumbnail'><img src='static/locationmovies/images/sample/milk copy.png'/></td>
+                        <td>{{ movies.title }}</td>
+                        <td>{{ movies.release_year }}</td>
+                        <td>{{ movies.location }}</td>
+                        <td>
+                            <form action="/wishlist" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" value="{{ single_movie_info.id }}" name="addMe">
+                                <input type="submit" value="Add to Wishlist" class='btn small success'>
+                            </form>
+                            <form action="/display/{{ single_movie_info.id }}" method="post">
+                                {% csrf_token %}
+                                <input type="submit" value="Details" class='btn small success'>
+                            </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div><!-- end of center content -->
+        </div>
+    </div>
+{% endblock %}
